@@ -21,7 +21,7 @@
 <body class="">
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top w-100 p-4 bg-white">
+    <nav class="navbar fixed-top w-100 bg-white">
         <div class="container-fluid px-md-5">
             <a class="navbar-brand fw-bold" href="#">Workaholic <span style="color: var(--accent-green)">.</span></a>
             <button class="btn btn-link text-decoration-none text-dark fw-bold" data-bs-toggle="modal"
@@ -36,25 +36,34 @@
             style="font-size: 15vw; line-height: 0.8; color: rgba(0,0,0,0.03); pointer-events: none; z-index: 0; margin-left: -2vw;">
             Workaholic</h1>
 
-        <div class="container-fluid h-100 p-0">
-            <div class="row h-100 align-items-center g-0">
-                <div class="col-lg-5 offset-lg-1 mb-5 mb-lg-0 py-5 position-relative" style="z-index: 1;">
-                    <h1 class="display-3 mb-4 fw-bold" style="letter-spacing: -2px;">Find and book <br> workspaces near
-                        <br> you — instantly.
+        <div class="container-fluid ps-md-5 pe-0">
+            <div class="row align-items-center g-0">
+                <div class="col-lg-5 mb-lg-0 position-relative">
+                    <h1 class="fw-bold"
+                        style="letter-spacing: 0%; font-size: 90px; line-height: 80px; height: 249px; width: 860px;">
+                        Find and book
+                        workspaces near you — instantly.
                     </h1>
-                    <p class="mb-5 text-muted" style="max-width: 450px; line-height: 1.6;">Workaholic helps you discover
-                        reliable coworking spaces close to your location and book ahead on your phone before getting to
-                        the hub. It's really that easy.</p>
-                    <button class="btn btn-pill-dark btn-lg shadow-lg" data-bs-toggle="modal"
+                    <p class="text-muted"
+                        style="padding-top: 16px; line-height: 100%; font-size: 18px; height: 54px; opacity: 50%;">
+                        Workaholic helps
+                        you discover
+                        coworking spaces close to your location and book ahead on so you can focus on getting work done.
+                        Join the waitlist for early access
+                    </p>
+                    <button class="btn btn-pill-dark btn-lg shadow-lg" style="margin-top: 16px;" data-bs-toggle="modal"
                         data-bs-target="#waitlistModal">Join the waitlist</button>
-                    <p class="mt-3 small text-muted fst-italic">Lunching soon across Nigeria</p>
+                    <p class="mt-3 small text-muted" style="opacity: 50%; margin-left: 80px;">Lunching soon across
+                        Nigeria</p>
                 </div>
                 <!-- Hero Image V2 -->
-                <div class="col-lg-6 h-100 position-relative">
-                    <div class="hero-img-container"
-                        style="border-radius: 40px 0 0 40px; overflow: hidden; height: 100%; min-height: 600px; margin-right: -12px;">
+                <!-- Hero Image V2 -->
+                <div class="col-lg-7 h-100 position-relative p-0">
+                    <div class="hero-img-container ms-auto"
+                        style="border-radius: 100px 0 0 100px; overflow: hidden; width: 500px; height: 500px;">
                         <!-- Extend to right edge -->
-                        <img src="img/image.png" alt="App Mockup" class="w-100 h-100" style="object-fit: cover;">
+                        <img src="img/image.png" alt="App Mockup" class="w-100 h-100"
+                            style="object-fit: fit; padding-top: 16px; padding-bottom: 16px;">
                     </div>
                 </div>
             </div>
@@ -178,107 +187,137 @@
     <!-- Footer V2 -->
     <section id="footer-cta" class="section-footer">
         <div class="container">
-            <div class="row align-items-center mb-5">
-                <!-- Video Column -->
+            <div class="row align-items-center">
+                <!-- Image Column (App Showcase) -->
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg bg-dark">
-                        <!-- Video Placeholder -->
-                        <div class="d-flex align-items-center justify-content-center h-100 text-white-50">
-                            <i class="bi bi-play-circle display-1"></i>
-                        </div>
+                    <!-- Placeholder for App Showcase Image -->
+                    <div class="ratio ratio-4x3 overflow-hidden" style="background-color: transparent;">
+                        <img src="img/ui.png" alt="App Screens" style="object-fit: contain;">
                     </div>
                 </div>
 
                 <!-- Text & Button Column -->
                 <div class="col-lg-5 offset-lg-1">
-                    <h2 class="display-4 fw-bold mb-4">Be among the first to <br> use Workaholic</h2>
-                    <p class="mb-5 text-muted small">Join the waitlist to gain early access to our top rated and
-                        priority bookings when we go live.</p>
-                    <button class="btn btn-pill-dark btn-lg shadow-lg mb-5" data-bs-toggle="modal"
-                        data-bs-target="#waitlistModal">Join the waitlist</button>
-
-                    <!-- Floating Note -->
-                    <div class="bg-white p-4 shadow-sm position-relative rounded-3"
-                        style="max-width: 100%; transform: rotate(-1deg);">
-                        <div class="position-absolute top-0 start-50 translate-middle">
-                            <span class="badge rounded-circle bg-success p-2"><i
-                                    class="bi bi-asterisk text-white"></i></span>
-                        </div>
-                        <p class="mb-0 text-muted small fw-bold">We're building the infrastructure for flexible work in
-                            Africa — starting with coworking discovery and booking. Join us as part of a waitlist that
-                            shapes the next demand.</p>
-                    </div>
+                    <h2 class="display-4 fw-bold" style="letter-spacing: -1px;">Be among the first to use
+                        Workaholic</h2>
+                    <p class="mb-5 text-muted small">Join the waitlist to get early access, launch updates, and priority
+                        bookings when we go live.</p>
+                    <button class="btn btn-pill-dark btn-lg shadow-lg mb-4"
+                        style="width: auto; height: auto; min-width: 200px;" data-bs-toggle="modal"
+                        data-bs-target="#waitlistModal">Join the Waitlist</button>
                 </div>
             </div>
 
-            <div class="row mt-5 pt-5 text-start border-top border-secondary border-opacity-25">
-                <div class="col-md-4 mb-4">
-                    <h6 class="fw-bold text-uppercase mb-3 small">Phone</h6>
-                    <p class="mb-0 small text-muted">+234 812 345 6789</p>
-                    <p class="small text-muted">+234 812 345 6789</p>
+            <!-- Bottom White Card -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bg-white p-5 shadow-sm position-relative text-center mt-5" style="border-radius: 20px;">
+                        <!-- Green Badge -->
+                        <div class="position-absolute top-0 start-50 translate-middle">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                style="width: 60px; height: 60px; background-color: #A0FF00;">
+                                <i class="bi bi-stars fs-3 text-white"></i>
+                            </div>
+                        </div>
+
+                        <p class="mb-0 text-muted small fw-bold"
+                            style="line-height: 1.8; max-width: 800px; margin: 0 auto;">We're building the
+                            infrastructure for flexible work in Africa — starting with coworking discovery and growing
+                            into purpose-built workspaces shaped by real demand.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4 text-center">
-                    <h6 class="fw-bold text-uppercase mb-3 small">Workaholic</h6>
-                    <p class="small text-muted">© 2026 Workaholic HQ</p>
-                </div>
-                <div class="col-md-4 mb-4 text-end">
-                    <h6 class="fw-bold text-uppercase mb-3 small">Email</h6>
-                    <p class="small text-muted">hello@workaholic.app</p>
+            </div>
+        </div>
+
+        <!-- Footer Links Full Width White Background -->
+        <div class="bg-white mt-5 w-100">
+            <div class="container">
+                <div class="row py-5 text-start">
+                    <div class="col-md-4 mb-4">
+                        <h6 class="fw-bold text-uppercase mb-3 small">Phone</h6>
+                        <p class="mb-0 small text-muted">+234 812 345 6789</p>
+                        <p class="small text-muted">+234 812 345 6789</p>
+                    </div>
+                    <div class="col-md-4 mb-4 text-center">
+                        <h6 class="fw-bold text-uppercase mb-3 small">Workaholic</h6>
+                        <p class="small text-muted">Built for the Future of Work</p>
+                    </div>
+                    <div class="col-md-4 mb-4 text-end">
+                        <h6 class="fw-bold text-uppercase mb-3 small">Email</h6>
+                        <p class="small text-muted">info@workaholicafrica.com</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Waitlist Modal -->
-    <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-black text-white p-4" style="border-radius: 20px; border: 1px solid #333;">
-                <div class="modal-header border-0 justify-content-center flex-column pb-0">
-                    <h3 class="modal-title fw-bold text-center mb-2">Join the Workaholic Waitlist</h3>
-                    <p class="text-muted text-center mb-0">Be the first to know when we launch in your city</p>
+            <div class="modal-content border-0 p-4 p-md-5 position-relative overflow-hidden"
+                style="border-radius: 40px; background-color: var(--bg-sage);">
+                <!-- Modal Noise Overlay -->
+                <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E'); opacity: 0.15; pointer-events: none; z-index: 0;">
                 </div>
-                <div class="modal-body pt-4">
+
+                <div class="position-relative" style="z-index: 1;">
+                    <!-- Close Button -->
+                    <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold mb-2">Join the Workaholic Waitlist</h2>
+                        <p class="text-muted small">Be the first to know when we launch in your city</p>
+                    </div>
+
                     <form id="waitlistForm">
-                        <div class="mb-3">
-                            <label class="form-label">Name *</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-transparent border-end-0 text-white"
-                                    style="border-color: #555;"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control bg-transparent border-start-0 text-white"
-                                    placeholder="Enter your name" style="border-color: #555;" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email *</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-transparent border-end-0 text-white"
-                                    style="border-color: #555;"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control bg-transparent border-start-0 text-white"
-                                    placeholder="your.email@example.com" style="border-color: #555;" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Phone (optional)</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-transparent border-end-0 text-white"
-                                    style="border-color: #555;"><i class="bi bi-telephone"></i></span>
-                                <input type="tel" class="form-control bg-transparent border-start-0 text-white"
-                                    placeholder="+234 (555) 000-0000" style="border-color: #555;">
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-bold">Name *</label>
+                            <div
+                                class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                        class="bi bi-person"></i></span>
+                                <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                    id="name" placeholder="Enter your name" required>
                             </div>
                         </div>
                         <div class="mb-4">
-                            <label class="form-label">City *</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-transparent border-end-0 text-white"
-                                    style="border-color: #555;"><i class="bi bi-geo-alt"></i></span>
-                                <input type="text" class="form-control bg-transparent border-start-0 text-white"
-                                    placeholder="Lagos, Nigeria, etc." style="border-color: #555;" required>
+                            <label for="email" class="form-label fw-bold">Email *</label>
+                            <div
+                                class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                        class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                    id="email" placeholder="your.email@example.com" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary-custom w-100 py-3 fw-bold fs-5">Join Now</button>
+                        <div class="mb-4">
+                            <label for="phone" class="form-label fw-bold">Phone (optional)</label>
+                            <div
+                                class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                        class="bi bi-telephone"></i></span>
+                                <input type="tel" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                    id="phone" placeholder="+234 (555) 000-0000">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label for="city" class="form-label fw-bold">City *</label>
+                            <div
+                                class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                        class="bi bi-geo-alt"></i></span>
+                                <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                    id="city" placeholder="Lagos, Nigeria, etc." required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-pill-dark w-100 py-3 fs-5 shadow-lg" id="submitBtn">Join
+                            Now</button>
+                        <p class="text-center mt-3 text-muted small" style="font-size: 0.8rem;">No spam — we only notify
+                            you when the app launches.</p>
                     </form>
-                    <p class="text-center text-muted mt-3 small mb-0">No spam — we only notify you when the app
-                        launches.</p>
                 </div>
             </div>
         </div>

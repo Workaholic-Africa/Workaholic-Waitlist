@@ -51,6 +51,8 @@ h6 {
     border-radius: 50px;
     /* Pill shape */
     transition: all 0.3s ease;
+    width: 400px;
+    height: 75px;
 }
 
 .btn-pill-dark:hover {
@@ -144,39 +146,25 @@ h6 {
 
 /* Waitlist Modal Overrides */
 .modal-content {
-    background-color: #222;
-    border: 1px solid #333;
-}
-
-
-.modal-content .form-control,
-.modal-content .input-group-text {
-    border-color: #444 !important;
-    padding: 12px 16px;
-}
-
-.modal-content .form-control:focus {
-    background-color: transparent;
-    border-color: var(--primary-green) !important;
-    box-shadow: none;
-    color: #fff;
-}
-
-.modal-content .input-group {
-    border: 1px solid #444;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.modal-content .input-group-text {
-    border: none;
-    padding-right: 0;
+    /* Box shadow for depth, background handled in HTML for noise overlay context */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .modal-content .form-control {
     border: none;
     padding-left: 12px;
 }
+
+/* Ensure form controls in modal inherit correct styles */
+.modal-content ::placeholder {
+    color: #AAA;
+    font-weight: 400;
+}
+
+.input-group-text {
+    color: #1a1a1a;
+}
+
 
 /* Specific overrides for chrome autofill background */
 input:-webkit-autofill,
