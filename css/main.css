@@ -138,6 +138,14 @@ h6 {
     color: var(--text-dark);
 }
 
+.zoom-hover {
+    transition: transform 0.3s ease;
+}
+
+.zoom-hover:hover {
+    transform: scale(1.02);
+}
+
 @media (max-width: 991.98px) {
 
     .section-how-it-works,

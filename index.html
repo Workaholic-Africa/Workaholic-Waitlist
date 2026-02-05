@@ -45,7 +45,7 @@
                         Find and book
                         workspaces near you — instantly.
                     </h1>
-                    <br>
+                    <br class=" ms-auto d-none d-lg-block">
                     <p class="text-muted lead mb-4 pe-lg-5" style="line-height: 1.4; opacity: 0.7;">
                         Workaholic helps
                         you discover
@@ -114,9 +114,9 @@
     <section class="section-banner d-flex align-items-center justify-content-center flex-column">
         <div class="container text-center">
             <h2 class="display-4 fw-bold mb-3 text-white">Workspaces, Simplified</h2>
-            <p class="mb-5 text-white small" style="max-width: 600px; margin: 0 auto; opacity: 0.9;">Forget complex
-                contracts and commitments. Workaholic brings freedom back to freelancing and remote work. Get access to
-                workspaces whenever you like.</p>
+            <p class="mb-5 text-white small" style="max-width: 600px; margin: 0 auto; opacity: 0.9;">Finding a good
+                place to work shouldn't slow you down. Workaholic brings flexibility and clarity to how you choose where
+                to work — wherever you are.</p>
             <button class="btn btn-pill-dark btn-lg shadow" data-bs-toggle="modal" data-bs-target="#waitlistModal">Join
                 the waitlist</button>
         </div>
@@ -126,7 +126,8 @@
     <section class="section-features text-center">
         <div class="container">
             <h2 class="mb-3 fw-bold display-6">Work where productivity makes sense.</h2>
-            <p class="mb-5 text-muted small mx-auto" style="max-width: 700px;">Whether you're a remote worker freelancer
+            <p class="mb-5 text-muted small mx-auto" style="max-width: 700px;">Whether you're a remote worker,
+                freelancer,
                 or small team, Workaholic connects you
                 to quality coworking spaces around you — without stress, guesswork, or wasted time.</p>
 
@@ -200,7 +201,9 @@
                 <!-- Image Column (App Showcase) -->
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <!-- Placeholder for App Showcase Image -->
-                    <div class="ratio ratio-4x3 overflow-hidden" style="background-color: transparent;">
+                    <div class="ratio ratio-4x3 overflow-hidden cursor-pointer zoom-hover"
+                        style="background-color: transparent; cursor: pointer;" data-bs-toggle="modal"
+                        data-bs-target="#appShowcaseModal">
                         <img src="img/ui.png" alt="App Screens" style="object-fit: contain;">
                     </div>
                 </div>
@@ -260,6 +263,19 @@
             </div>
         </div>
     </section>
+
+    <!-- App Showcase Modal -->
+    <div class="modal fade" id="appShowcaseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0 shadow-none">
+                <div class="modal-body p-0 text-center position-relative">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img src="img/ui.png" class="img-fluid rounded-4 shadow-lg" alt="App Screens Full Size">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Waitlist Modal -->
     <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
