@@ -21,20 +21,18 @@
 <body class="">
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top w-100 bg-white">
-        <div class="container ms-5 me-5 px-md-5">
+    <nav class="navbar fixed-top ps-5 pe-5 w-100 bg-white">
+        <div class="container">
             <a class="navbar-brand fw-bold" href="#">Workaholic <span style="color: var(--accent-green)">.</span></a>
-            <button class="btn btn-link text-decoration-none " style="color: black; font-weight: 500;"
-                data-bs-toggle="modal" data-bs-target="#waitlistModal">Join Waitlist</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="section-hero">
         <!-- Background Text -->
-        <h1 class="position-absolute bottom-0 start-0 fw-bold text-uppercase d-none d-lg-block"
+        <h1 class="position-absolute bottom-0 start-0 fw-bold d-none d-lg-block"
             style="font-size: 15vw; line-height: 0.8; color: rgba(0,0,0,0.03); pointer-events: none; z-index: 0; margin-left: -2vw;">
-            Workaholic</h1>
+            Workaholic.</h1>
 
         <div class="ms-5 ps-md-5 me-0 ps-0">
             <div class="row align-items-center g-0 flex-column-reverse flex-lg-row">
@@ -60,16 +58,32 @@
                 <!-- Hero Image V2 -->
                 <div class="col-lg-6 h-100 position-relative px-0 p-0 mb-4 mb-lg-0">
                     <!-- Desktop Image -->
-                    <div class="hero-img-container ms-auto d-none d-lg-block"
-                        style="overflow: hidden; width: 500px; height: 500px;">
-                        <img src="img/image.png" alt="App Mockup" class="w-100 h-100"
-                            style="object-fit: fill; padding-top: 16px; padding-bottom: 16px;">
+                    <div class="hero-img-container ms-auto d-none d-lg-block cursor-pointer zoom-hover position-relative"
+                        style="overflow: hidden; width: 500px; height: 500px; cursor: pointer;" data-bs-toggle="modal"
+                        data-bs-target="#appShowcaseModal">
+                        <div class="w-100 h-100 position-relative">
+                            <img src="img/image.png" alt="App Mockup" class="w-100 h-100"
+                                style="object-fit: fill; padding-top: 16px; padding-bottom: 16px;">
+                            <!-- Play Button Overlay -->
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <i class="bi bi-play-circle-fill text-white display-1 shadow-lg"
+                                    style="opacity: 0.8;"></i>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Mobile Image -->
-                    <div class="d-block d-lg-none w-100 overflow-hidden">
-                        <img src="img/image_square.png" alt="App Mockup" class="w-100"
-                            style="object-fit: cover; height: auto;">
+                    <div class="d-block d-lg-none w-100 overflow-hidden cursor-pointer zoom-hover position-relative"
+                        style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#appShowcaseModal">
+                        <div class="w-100 position-relative">
+                            <img src="img/image_square.png" alt="App Mockup" class="w-100"
+                                style="object-fit: fill; height: auto;">
+                            <!-- Play Button Overlay -->
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <i class="bi bi-play-circle-fill text-white display-1 shadow-lg"
+                                    style="opacity: 0.8;"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,13 +247,14 @@
                         <!-- Green Badge -->
                         <div class="position-absolute top-0 start-50 translate-middle">
                             <div class="rounded-circle d-flex align-items-center justify-content-center shadow-sm"
-                                style="width: 60px; height: 60px; background-color: #A0FF00;">
-                                <i class="bi bi-stars fs-3 text-white"></i>
+                                style="width: 60px; height: 60px;">
+                                <img src="img/workaholic_logo.png" alt="App Mockup" class="w-100"
+                                    style="object-fit: cover; height: auto;">
                             </div>
                         </div>
 
                         <p class="mb-0 text-muted small mt-3"
-                            style="line-height: 1.8; max-width: 800px; margin: 0 auto;">We're building the
+                            style="line-height: 1.8; max-width: 800px; margin: 0 auto; ">We're building the
                             infrastructure for flexible work in Africa — starting with coworking discovery and growing
                             into purpose-built workspaces shaped by real demand.</p>
                     </div>
@@ -344,14 +359,57 @@
                                     id="phone" placeholder="+234 (555) 000-0000">
                             </div>
                         </div>
-                        <div class="mb-5">
-                            <label for="city" class="form-label fw-bold">City *</label>
+                        <!-- User Type Selection -->
+                        <div class="mb-4">
+                            <label for="userType" class="form-label fw-bold">I am a *</label>
                             <div
                                 class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
-                                        class="bi bi-geo-alt"></i></span>
-                                <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    id="city" placeholder="Lagos, Nigeria, etc." required>
+                                        class="bi bi-person-badge"></i></span>
+                                <select class="form-select bg-transparent border-0 shadow-none ps-1" id="userType"
+                                    required style="cursor: pointer;">
+                                    <option value="" disabled selected>Select user type</option>
+                                    <option value="client">Client</option>
+                                    <option value="partner">Partner</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Client Fields (City) -->
+                        <div id="clientFields" class="d-none">
+                            <div class="mb-5">
+                                <label for="city" class="form-label fw-bold">City *</label>
+                                <div
+                                    class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                    <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                            class="bi bi-geo-alt"></i></span>
+                                    <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                        id="city" placeholder="Lagos, Nigeria, etc.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Partner Fields (Company Name, Location) -->
+                        <div id="partnerFields" class="d-none">
+                            <div class="mb-4">
+                                <label for="companyName" class="form-label fw-bold">Company Name *</label>
+                                <div
+                                    class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                    <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                            class="bi bi-building"></i></span>
+                                    <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                        id="companyName" placeholder="Enter company name">
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label for="companyLocation" class="form-label fw-bold">Company Location *</label>
+                                <div
+                                    class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
+                                    <span class="input-group-text bg-transparent border-0 ps-4"><i
+                                            class="bi bi-geo-alt-fill"></i></span>
+                                    <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
+                                        id="companyLocation" placeholder="Company address/city">
+                                </div>
                             </div>
                         </div>
 

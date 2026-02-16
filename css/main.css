@@ -47,6 +47,7 @@ h6 {
     box-shadow: 0px 4px 6px 0px #00000040;
     color: var(--accent-green);
     border: none;
+    font-size: 16px;
     letter-spacing: -4%;
     font-weight: 500;
     padding: 12px 32px;
@@ -66,7 +67,7 @@ h6 {
 /* Section/* Sections */
 .section-hero {
     background-color: var(--bg-sage);
-    min-height: 90vh;
+    min-height: 100vh;
     /* Full screen height */
     display: flex;
     align-items: center;
