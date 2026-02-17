@@ -65,7 +65,7 @@ h6 {
 /* Section/* Sections */
 .section-hero {
     background-color: var(--bg-sage);
-    min-height: 100vh;
+    min-height: 90vh;
     /* Full screen height */
     display: flex;
     align-items: center;
@@ -156,6 +156,12 @@ h6 {
     background-color: var(--bg-sage);
     padding: 100px 0 0;
     color: var(--text-dark);
+}
+
+@media (min-width: 992px) {
+    .cta-card-spaced {
+        margin: 0 12rem;
+    }
 }
 
 .zoom-hover {

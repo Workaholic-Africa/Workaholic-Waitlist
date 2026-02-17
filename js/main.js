@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const waitlistModal = new bootstrap.Modal(waitlistModalElement);
 
     // Dynamic Form Logic
-    const userTypeSelect = document.getElementById('userType');
-    const clientFields = document.getElementById('clientFields');
+    const userTypePartner = document.getElementById('userTypePartner');
     const partnerFields = document.getElementById('partnerFields');
 
     // Inputs
@@ -15,23 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const companyNameInput = document.getElementById('companyName');
     const companyLocationInput = document.getElementById('companyLocation');
 
-    if (userTypeSelect) {
-        userTypeSelect.addEventListener('change', function () {
-            const value = this.value;
-
-            // Reset all first
-            clientFields.classList.add('d-none');
-            partnerFields.classList.add('d-none');
-
-            // Remove required attributes from hidden fields
-            if (cityInput) cityInput.required = false;
-            if (companyNameInput) companyNameInput.required = false;
-            if (companyLocationInput) companyLocationInput.required = false;
-
-            if (value === 'client') {
-                clientFields.classList.remove('d-none');
-                if (cityInput) cityInput.required = true;
-            } else if (value === 'partner') {
+    if (userTypePartner) {
+        userTypePartner.addEventListener('change', function () {
+            if (this.checked) {
                 partnerFields.classList.remove('d-none');
                 if (companyNameInput) companyNameInput.required = true;
                 if (companyLocationInput) companyLocationInput.required = true;
@@ -45,12 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         waitlistForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Basic check so we don't submit if user type isn't selected (though HTML required handles this)
-            if (!userTypeSelect.value) {
-                alert('Please select a user type.');
-                return;
-            }
-
             const btn = waitlistForm.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
 
@@ -63,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 waitlistForm.reset();
 
                 // Reset dynamic fields manually on reset
-                clientFields.classList.add('d-none');
-                partnerFields.classList.add('d-none');
+                if (partnerFields) partnerFields.classList.add('d-none');
+
+                // Explicitly uncheck the radio button just in case
+                if (userTypePartner) userTypePartner.checked = false;
 
                 btn.innerHTML = originalText;
                 btn.disabled = false;
