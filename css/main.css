@@ -217,6 +217,12 @@ h6 {
     background-color: #F8F8F8;
     /* Light background for V2 benefits cards */
     color: #000;
+    transition: all 0.3s ease;
+}
+
+.benefits-card:hover {
+    background-color: #A0FF00;
+    transform: scale(1.05);
 }
 
 /* Waitlist Modal Overrides */
