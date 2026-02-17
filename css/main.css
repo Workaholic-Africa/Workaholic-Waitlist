@@ -1,11 +1,11 @@
 :root {
-    --bg-sage: #E6EBE0;
+    --bg-sage: #A0FF000D;
     --bg-grey-light: #D9D9D9;
-    --bg-dark: #4A4A4A;
+    --bg-dark: #828282;
     --text-dark: #1a1a1a;
     --text-white: #FFFFFF;
     --accent-green: #9FE870;
-    --btn-dark: #2A2A2A;
+    --btn-dark: #828282;
 }
 
 body {
@@ -57,8 +57,8 @@ h6 {
 }
 
 .btn-pill-dark:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #171717 0%, #7D7D7D 100%);
     color: var(--accent-green);
 }
 
@@ -146,6 +146,26 @@ h6 {
     transform: scale(1.02);
 }
 
+/* Custom Play Button */
+.custom-play-button {
+    width: 80px;
+    height: auto;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-play-button img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.custom-play-button:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 991.98px) {
 
     .section-how-it-works,
@@ -156,13 +176,20 @@ h6 {
         padding: 60px 0;
     }
 
-    h1.display-1 {
-        font-size: 3rem;
+    h1.display-1,
+    .section-hero h1 {
+        font-size: 3rem !important;
+    }
+
+    .section-hero {
+        padding-top: 100px;
     }
 
     .hero-img-container {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
         border-radius: 0 !important;
-        /* Reset radius on mobile if needed */
     }
 }
 
