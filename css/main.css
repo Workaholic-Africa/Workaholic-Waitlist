@@ -101,6 +101,26 @@ h6 {
     object-fit: fill;
 }
 
+.hero-bg-text {
+    font-size: 15vw;
+    line-height: 0.8;
+    color: rgba(0, 0, 0, 0.03);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-eclipse {
+    height: 30vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (min-width: 1920px) {
+    .hero-bg-text {
+        font-size: 300px;
+    }
+}
+
 .section-how-it-works {
     background-color: #F8F8F8;
     color: var(--text-dark);
