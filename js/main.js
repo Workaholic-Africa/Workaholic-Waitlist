@@ -52,4 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     }
+
+    // Clear form when modal is closed (cancelled)
+    if (waitlistModalElement) {
+        waitlistModalElement.addEventListener('hidden.bs.modal', () => {
+            if (waitlistForm) {
+                waitlistForm.reset();
+                if (partnerFields) partnerFields.classList.add('d-none');
+
+                // Explicitly uncheck the radio button
+                if (userTypePartner) userTypePartner.checked = false;
+            }
+        });
+    }
 });

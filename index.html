@@ -37,7 +37,7 @@
         <img src="img/eclipse.png"
             class="hero-eclipse position-absolute bottom-0 start-50 translate-middle-x d-none d-lg-block">
 
-        <div class="container ms-0 me-0" style="max-width: 100%;">
+        <div class="container d-flex justify-content-center ms-0 me-0" style="max-width: 100%;">
             <div class="mx-3 mx-lg-0 ms-lg-5 ps-lg-5">
                 <div class="row align-items-center g-0 flex-column-reverse flex-lg-row">
                     <!-- Text Column -->
@@ -286,7 +286,7 @@
             <div class="container">
                 <div class="row py-5 justify-content-between">
                     <!-- Brand & Tagline -->
-                    <div class="col-12 col-md-5">
+                    <div class="col-12 mb-md-5 col-md-5">
                         <a href="#" class="d-inline-block mb-3 text-decoration-none">
                             <img src="img/workaholic_logo_rectangle.png" alt="Workaholic" style="height: 30px;">
                         </a>
@@ -380,7 +380,7 @@
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-person"></i></span>
                                 <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    id="name" placeholder="Enter your name" required>
+                                    style="font-size: medium;" id="name" placeholder="Enter your name" required>
                             </div>
                         </div>
                         <div class="mb-4">
@@ -390,7 +390,7 @@
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-envelope"></i></span>
                                 <input type="email" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    id="email" placeholder="your.email@example.com" required>
+                                    style="font-size: medium;" id="email" placeholder="your.email@example.com" required>
                             </div>
                         </div>
                         <div class="mb-4">
@@ -400,7 +400,7 @@
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-telephone"></i></span>
                                 <input type="tel" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    id="phone" placeholder="+234 (555) 000-0000">
+                                    style="font-size: medium;" id="phone" placeholder="+234 (555) 000-0000">
                             </div>
                         </div>
                         <!-- City (Default Field) -->
@@ -411,19 +411,18 @@
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-geo-alt"></i></span>
                                 <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    id="city" placeholder="e.g. Lagos" required>
+                                    style="font-size: medium;" id="city" placeholder="e.g. Lagos" required>
                             </div>
                         </div>
 
                         <!-- User Type (Radio - Partner Only) -->
-                        <div class="mb-4 align-items-center d-flex">
-
-
-
+                        <div class="align-items-center d-flex">
                             <input type="radio" name="userType" id="userTypePartner" value="partner"
-                                style="accent-color: #A0FF00; width: 20px; height: 20px; cursor: pointer;">
+                                style="accent-color: #A0FF00; width: 15px; height: 15px; border-width: 2px; cursor: pointer;">
                             <label for="userTypePartner" class="fw-bold ms-2">I am a Partner</label>
-
+                        </div>
+                        <div class="mb-4">
+                            <p class="small">Select this to list your space on Workaholic</p>
                         </div>
 
                         <!-- Partner Fields (Company Name, Location) -->
@@ -435,7 +434,7 @@
                                     <span class="input-group-text bg-transparent border-0 ps-4"><i
                                             class="bi bi-building"></i></span>
                                     <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                        id="companyName" placeholder="Enter company name">
+                                        style="font-size: medium;" id="companyName" placeholder="Enter company name">
                                 </div>
                             </div>
                             <div class="mb-5">
@@ -445,7 +444,8 @@
                                     <span class="input-group-text bg-transparent border-0 ps-4"><i
                                             class="bi bi-geo-alt-fill"></i></span>
                                     <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                        id="companyLocation" placeholder="Company address/city">
+                                        style="font-size: medium;" id="companyLocation"
+                                        placeholder="Company address/city">
                                 </div>
                             </div>
                         </div>
