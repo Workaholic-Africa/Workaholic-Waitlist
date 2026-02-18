@@ -15,12 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const companyLocationInput = document.getElementById('companyLocation');
 
     if (userTypePartner) {
-        userTypePartner.addEventListener('change', function () {
-            if (this.checked) {
+        let isPartnerChecked = false;
+
+        userTypePartner.addEventListener('click', function (e) {
+            if (isPartnerChecked) {
+                // Was checked, so uncheck it
+                this.checked = false;
+                isPartnerChecked = false;
+                partnerFields.classList.add('d-none');
+                if (companyNameInput) companyNameInput.required = false;
+                if (companyLocationInput) companyLocationInput.required = false;
+            } else {
+                // Was not checked, so check it
+                this.checked = true;
+                isPartnerChecked = true;
                 partnerFields.classList.remove('d-none');
                 if (companyNameInput) companyNameInput.required = true;
                 if (companyLocationInput) companyLocationInput.required = true;
             }
+        });
+
+        // Ensure state sync if reset happens externally
+        waitlistModalElement.addEventListener('hidden.bs.modal', () => {
+            isPartnerChecked = false;
         });
     }
 

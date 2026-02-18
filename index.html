@@ -357,61 +357,59 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 p-4 p-md-5 position-relative overflow-hidden"
                 style="border-radius: 40px; background-color: #FFFFFF;">
-                <!-- Modal Noise Overlay Removed -->
-                <!-- <div class="position-absolute top-0 start-0 w-100 h-100"
-                    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E'); opacity: 0.15; pointer-events: none; z-index: 0;">
-                </div> -->
 
                 <div class="position-relative" style="z-index: 1;">
                     <!-- Close Button -->
                     <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
-                    <div class="text-center mb-5">
-                        <h2 class="fw-bold mb-2">Join the Workaholic Waitlist</h2>
-                        <p class="text-muted small">Be the first to know when we launch in your city</p>
+                    <div class="text-center">
+                        <h2 class="mb-2" style="font-weight: 500; width: 100%;">Join the Workaholic Waitlist</h2>
+                        <p class="text-muted small">Join the elite circle of founders and teams scaling across Africa
+                            with Workaholic</p>
                     </div>
 
                     <form id="waitlistForm">
-                        <div class="mb-4">
-                            <label for="name" class="form-label fw-bold">Name *</label>
+                        <div class="mb-3">
+                            <label for="name" class="form-label" style="font-weight: 500;">Name
+                                *</label>
                             <div
                                 class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-person"></i></span>
                                 <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    style="font-size: medium;" id="name" placeholder="Enter your name" required>
+                                    style="font-size: 16px;" id="name" placeholder="Enter your name" required>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="form-label fw-bold">Email *</label>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="font-weight: 500;">Email *</label>
                             <div
                                 class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-envelope"></i></span>
                                 <input type="email" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    style="font-size: medium;" id="email" placeholder="your.email@example.com" required>
+                                    style="font-size: 16px;" id="email" placeholder="your.email@example.com" required>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="phone" class="form-label fw-bold">Phone (optional)</label>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" style="font-weight: 500;">Phone (optional)</label>
                             <div
                                 class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-telephone"></i></span>
                                 <input type="tel" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    style="font-size: medium;" id="phone" placeholder="+234 (555) 000-0000">
+                                    style="font-size: 16px;" id="phone" placeholder="+234 (555) 000-0000">
                             </div>
                         </div>
                         <!-- City (Default Field) -->
-                        <div class="mb-4">
-                            <label for="city" class="form-label fw-bold">City *</label>
+                        <div class="mb-3">
+                            <label for="city" class="form-label" style="font-weight: 500;">City *</label>
                             <div
                                 class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                 <span class="input-group-text bg-transparent border-0 ps-4"><i
                                         class="bi bi-geo-alt"></i></span>
                                 <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                    style="font-size: medium;" id="city" placeholder="e.g. Lagos" required>
+                                    style="font-size: 16px;" id="city" placeholder="e.g. Lagos" required>
                             </div>
                         </div>
 
@@ -419,33 +417,36 @@
                         <div class="align-items-center d-flex">
                             <input type="radio" name="userType" id="userTypePartner" value="partner"
                                 style="accent-color: #A0FF00; width: 15px; height: 15px; border-width: 2px; cursor: pointer;">
-                            <label for="userTypePartner" class="fw-bold ms-2">I am a Partner</label>
+                            <label for="userTypePartner" class="fw-bold ms-2">Partner</label>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <p class="small">Select this to list your space on Workaholic</p>
                         </div>
 
                         <!-- Partner Fields (Company Name, Location) -->
                         <div id="partnerFields" class="d-none">
-                            <div class="mb-4">
-                                <label for="companyName" class="form-label fw-bold">Workspace Name *</label>
+                            <div class="mb-3">
+                                <label for="companyName" class="form-label" style="font-weight: 500;">Workspace Name
+                                    *</label>
                                 <div
                                     class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                     <span class="input-group-text bg-transparent border-0 ps-4"><i
                                             class="bi bi-building"></i></span>
                                     <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                        style="font-size: medium;" id="companyName" placeholder="Enter company name">
+                                        style="font-size: 16px;" id="companyName"
+                                        placeholder="Enter your workspace name">
                                 </div>
                             </div>
-                            <div class="mb-5">
-                                <label for="companyLocation" class="form-label fw-bold">Workspace Location *</label>
+                            <div class="mb-3">
+                                <label for="companyLocation" class="form-label" style="font-weight: 500;">Workspace
+                                    Location *</label>
                                 <div
                                     class="input-group input-group-lg bg-transparent border border-dark border-opacity-25 rounded-pill overflow-hidden">
                                     <span class="input-group-text bg-transparent border-0 ps-4"><i
                                             class="bi bi-geo-alt-fill"></i></span>
                                     <input type="text" class="form-control bg-transparent border-0 shadow-none ps-1"
-                                        style="font-size: medium;" id="companyLocation"
-                                        placeholder="Company address/city">
+                                        style="font-size: 16px;" id="companyLocation"
+                                        placeholder="Lagos, Nigeria, etc.">
                                 </div>
                             </div>
                         </div>
