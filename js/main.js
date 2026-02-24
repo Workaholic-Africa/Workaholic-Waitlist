@@ -41,10 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle form submission (simulation)
+    // Initialize Supabase
+    const supabaseUrl = 'https://nilfyfnerndwvxlvepcb.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pbGZ5Zm5lcm5kd3Z4bHZlcGNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0Mjk3NzgsImV4cCI6MjA4NzAwNTc3OH0.lBMFZWfoCB0hrQyZkXavPDi2fgFU5cB03ozg6CD0TeM'
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
+
+    // Handle form submission
     const waitlistForm = document.getElementById('waitlistForm');
     if (waitlistForm) {
-        waitlistForm.addEventListener('submit', (e) => {
+        waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const btn = waitlistForm.querySelector('button[type="submit"]');
@@ -53,20 +58,60 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = 'Joining...';
             btn.disabled = true;
 
-            setTimeout(() => {
+            // Collect Data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+
+            // Determine User Type & Workspace Details
+            let userType = 'client';
+            let workspaceName = null;
+            let workspaceLocation = null;
+
+            if (userTypePartner && userTypePartner.checked) {
+                userType = 'partner';
+                workspaceName = document.getElementById('companyName').value;
+                workspaceLocation = document.getElementById('companyLocation').value;
+            }
+
+            // Insert into Supabase
+            const { data, error } = await supabaseClient
+                .from('waitlist')
+                .insert([
+                    {
+                        name,
+                        email,
+                        phone,
+                        city,
+                        user_type: userType,
+                        workspace_name: workspaceName,
+                        workspace_location: workspaceLocation
+                    },
+                ])
+
+            if (error) {
+                console.error('Error inserting data:', error);
+                alert('Something went wrong. Please try again.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            } else {
                 alert('Success! You have been added to the waitlist.');
                 waitlistModal.hide();
                 waitlistForm.reset();
 
-                // Reset dynamic fields manually on reset
+                // Reset dynamic fields
                 if (partnerFields) partnerFields.classList.add('d-none');
-
-                // Explicitly uncheck the radio button just in case
-                if (userTypePartner) userTypePartner.checked = false;
+                if (userTypePartner) {
+                    userTypePartner.checked = false;
+                    // Reset internal state for toggle logic if it exists
+                    // Note: We can't access isPartnerChecked here easily as it's scoped, 
+                    // but the hidden.bs.modal listener handles the state reset anyway.
+                }
 
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-            }, 1000);
+            }
         });
     }
 
