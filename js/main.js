@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error) {
                 console.error('Error inserting data:', error);
-                alert('Something went wrong. Please try again.');
+                alert(`Something went wrong: ${error.message || 'Unknown error'}`);
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             } else {
