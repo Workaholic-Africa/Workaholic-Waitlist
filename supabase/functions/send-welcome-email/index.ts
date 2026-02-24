@@ -17,84 +17,43 @@ serve(async (req) => {
         }
 
         // Determine the email content based on user_type (client vs partner)
-        let emailSubject = "Welcome to the Workaholic Waitlist!";
-        let emailHtml = "";
+        const emailSubject = "Welcome to the Workaholic Waitlist";
+        const waitlistType = user_type === "partner" ? "Partner" : "Client";
 
-        if (user_type === "partner") {
-            emailHtml = `
-        <div style="font-family: Poppins, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #A0FF00;">Welcome, Partner!</h2>
-          <p>Hi ${name},</p>
-          <br>
-          <p>You're officially on the Workaholic Partner waitlist.</p>
-          <br>
-          <p>Thank you for joining us as we build a smarter way to discover and access structured coworking spaces across Nigeria.</p>
-          <br>
-          <p>Workaholic is designed to help professionals:</p>
-          <br>
-          <ul>
-            <li>Find reliable work environments near them</li>
-            <li>Compare vetted coworking spaces</li>
-            <li>Book seamlessly and intentionally</li>
-          </ul>
-          <br>
-          <p>We’re currently preparing for internal testing and early access rollout.</p>
-          <br>
-          <p>As a waitlist member, you’ll be among the first to:</p>
-          <br>
-          <ul>
-            <li>Experience the platform</li>
-            <li>Receive early product updates</li>
-            <li>Access exclusive beta invitations</li>
-          </ul>
-          <br>
-          <p>We appreciate your early support.</p>
-          <br>
-          <p>The future of focused work starts with access.</p>
-          <br>
-          <p>Workaholic Africa</p>
-          <p>Location-based coworking discovery</p>
-          <p><a href="https://workaholicafrica.com">WorkaholicAfrica.com</a></p>
-        </div>
-      `;
-        } else {
-            emailHtml = `
-        <div style="font-family: Poppins, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #A0FF00;">Welcome, Partner!</h2>
-          <p>Hi ${name},</p>
-          <br>
-          <p>You're officially on the Workaholic Client waitlist.</p>
-          <br>
-          <p>Thank you for joining us as we build a smarter way to discover and access structured coworking spaces across Nigeria.</p>
-          <br>
-          <p>Workaholic is designed to help professionals:</p>
-          <br>
-          <ul>
-            <li>Find reliable work environments near them</li>
-            <li>Compare vetted coworking spaces</li>
-            <li>Book seamlessly and intentionally</li>
-          </ul>
-          <br>
-          <p>We’re currently preparing for internal testing and early access rollout.</p>
-          <br>
-          <p>As a waitlist member, you’ll be among the first to:</p>
-          <br>
-          <ul>
-            <li>Experience the platform</li>
-            <li>Receive early product updates</li>
-            <li>Access exclusive beta invitations</li>
-          </ul>
-          <br>
-          <p>We appreciate your early support.</p>
-          <br>
-          <p>The future of focused work starts with access.</p>
-          <br>
-          <p>Workaholic Africa</p>
-          <p>Location-based coworking discovery</p>
-          <p><a href="https://workaholicafrica.com">WorkaholicAfrica.com</a></p>
-        </div>
-      `;
-        }
+        const emailHtml = `
+      <div style="font-family: Poppins, Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <p>Hi ${name},</p>
+        <br>
+        <p>You're officially on the Workaholic ${waitlistType} waitlist.</p>
+        <br>
+        <p>Thank you for joining us as we build a smarter way to discover and access structured coworking spaces across Nigeria.</p>
+        <br>
+        <p>Workaholic is designed to help professionals:</p>
+        <ul>
+          <li style="margin-bottom: 8px;">Find reliable work environments near them</li>
+          <li style="margin-bottom: 8px;">Compare vetted coworking spaces</li>
+          <li style="margin-bottom: 8px;">Book seamlessly and intentionally</li>
+        </ul>
+        <br>
+        <p>We’re currently preparing for internal testing and early access rollout.</p>
+        <br>
+        <p>As a waitlist member, you’ll be among the first to:</p>
+        <ul>
+          <li style="margin-bottom: 8px;">Experience the platform</li>
+          <li style="margin-bottom: 8px;">Receive early product updates</li>
+          <li style="margin-bottom: 8px;">Access exclusive beta invitations</li>
+        </ul>
+        <br>
+        <p>We appreciate your early support.</p>
+        <br>
+        <p>The future of focused work starts with access.</p>
+        <br>
+        <p>&mdash;<br>
+        <strong>Workaholic Africa</strong><br>
+        Location-based coworking discovery<br>
+        <a href="https://workaholicafrica.com" style="color: #666; text-decoration: underline;">WorkaholicAfrica.com</a></p>
+      </div>
+    `;
 
         // Call the Resend API
         const res = await fetch("https://api.resend.com/emails", {
@@ -104,8 +63,7 @@ serve(async (req) => {
                 Authorization: `Bearer ${RESEND_API_KEY}`,
             },
             body: JSON.stringify({
-                // TODO: Replace with the verified domain email you get from Resend
-                from: "Workaholic <onboarding@resend.dev>",
+                from: "Workaholic Africa <noreply@workaholicafrica.com>",
                 to: [email],
                 subject: emailSubject,
                 html: emailHtml,
